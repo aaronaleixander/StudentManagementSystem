@@ -78,5 +78,10 @@ namespace StudentManagementStudent
             return $"{LastName},{FirstName}{separator}" +
                    $"{DOB.ToShortDateString()}{separator}";
         }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }
