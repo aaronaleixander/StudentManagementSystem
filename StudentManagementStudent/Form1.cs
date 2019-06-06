@@ -36,7 +36,7 @@ namespace StudentManagementStudent
 
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
-            FrmAddStudent addStuForm = new FrmAddStudent();
+            FrmAddUpdateStudent addStuForm = new FrmAddUpdateStudent();
             addStuForm.ShowDialog();
             PopulateStudentListBox();
         }
@@ -75,6 +75,31 @@ namespace StudentManagementStudent
                 StudentDB.Delete(stu.StudentID);
                 PopulateStudentListBox();
                 MessageBox.Show("Student Deleted Successfully.");
+            }
+        }
+
+
+
+        private void btnUpdateStudent_Click_1(object sender, EventArgs e)
+        {
+            // TODO: Check student is selected
+            DisplayUpdateForm();
+            PopulateStudentListBox();
+        }
+
+        private void DisplayUpdateForm()
+        {
+            Student selectedStu = lstStudents.SelectedItem as Student;
+            var updateForm = new FrmAddUpdateStudent(selectedStu);
+            updateForm.ShowDialog();
+        }
+
+        private void lstStudents_DoubleClick(object sender, EventArgs e)
+        {
+            //TODO: Ensure user clicks specific student
+            if(lstStudents.SelectedItem != null)
+            {
+                DisplayUpdateForm();
             }
         }
     }

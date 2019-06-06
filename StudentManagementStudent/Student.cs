@@ -9,7 +9,7 @@ namespace StudentManagementStudent
     /// <summary>
     /// Represents an individual Clover Park Student.
     /// </summary>
-    class Student
+    public class Student
     {
         // Default no arg constructor
         // Compiler will create a no arg if no constructor is found.

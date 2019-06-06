@@ -1,6 +1,6 @@
 ﻿namespace StudentManagementStudent
 {
-    partial class FrmAddStudent
+    partial class FrmAddUpdateStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -112,9 +112,9 @@
             this.btnAddStudent.TabIndex = 8;
             this.btnAddStudent.Text = "Register Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            this.btnAddStudent.Click += new System.EventHandler(this.BtnAddOrUpdateStudent_Click);
             // 
-            // FrmAddStudent
+            // FrmAddUpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,7 +128,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmAddStudent";
+            this.Name = "FrmAddUpdateStudent";
             this.Text = "Add New Student";
             this.ResumeLayout(false);
             this.PerformLayout();

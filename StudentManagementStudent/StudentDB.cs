@@ -84,10 +84,42 @@ namespace StudentManagementStudent
                 con.Dispose();  // dispose calls close internally
             }
         }
+
+        /// <summary>
+        /// Update existing student.
+        /// </summary>
+        /// <param name="s">New student data</param>
+        /// <exception cref="SqlException"></exception>
         public static void Update(Student s)
         {
-            throw new NotImplementedException();
+            SqlConnection con = SmsDB.GetConnection();
+            SqlCommand updateCmd = new SqlCommand();
+            updateCmd.Connection = con;
+            updateCmd.CommandText = "UPDATE Students SET FirstName = @fName, LastName = @lName, DOB = @dob, Program = @program " +
+                                                    "WHERE SID = @sid";
+            updateCmd.Parameters.AddWithValue("@fName", s.FirstName);
+            updateCmd.Parameters.AddWithValue("@lName", s.LastName);
+            updateCmd.Parameters.AddWithValue("@dob", s.DOB);
+            updateCmd.Parameters.AddWithValue("@program", s.ProgramOfChoice);
+            updateCmd.Parameters.AddWithValue("@sid", s.StudentID);
+
+            try
+            {
+                con.Open();
+                int rowsAffected = updateCmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Dispose();
+            }
+
         }
+
+        /// <summary>
+        /// Deletes existing student
+        /// </summary>
+        /// <param name="id">ID of the existing student.</param>
+        /// <returns></returns>
         public static bool Delete(int id)
         {
             SqlConnection con = SmsDB.GetConnection();

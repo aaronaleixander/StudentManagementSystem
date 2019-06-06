@@ -31,6 +31,7 @@
             this.btnViewStudents = new System.Windows.Forms.Button();
             this.btnDeleteStudent = new System.Windows.Forms.Button();
             this.lstStudents = new System.Windows.Forms.ListBox();
+            this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnViewStudents
@@ -60,17 +61,29 @@
             this.lstStudents.Name = "lstStudents";
             this.lstStudents.Size = new System.Drawing.Size(189, 134);
             this.lstStudents.TabIndex = 4;
+            this.lstStudents.DoubleClick += new System.EventHandler(this.lstStudents_DoubleClick);
+            // 
+            // btnUpdateStudent
+            // 
+            this.btnUpdateStudent.Location = new System.Drawing.Point(80, 330);
+            this.btnUpdateStudent.Name = "btnUpdateStudent";
+            this.btnUpdateStudent.Size = new System.Drawing.Size(181, 23);
+            this.btnUpdateStudent.TabIndex = 5;
+            this.btnUpdateStudent.Text = "Update";
+            this.btnUpdateStudent.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 341);
+            this.ClientSize = new System.Drawing.Size(358, 410);
+            this.Controls.Add(this.btnUpdateStudent);
             this.Controls.Add(this.lstStudents);
             this.Controls.Add(this.btnDeleteStudent);
             this.Controls.Add(this.btnViewStudents);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Student Registration";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -80,6 +93,7 @@
         private System.Windows.Forms.Button btnViewStudents;
         private System.Windows.Forms.Button btnDeleteStudent;
         private System.Windows.Forms.ListBox lstStudents;
+        private System.Windows.Forms.Button btnUpdateStudent;
     }
 }
 
